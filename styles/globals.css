@@ -112,13 +112,13 @@ ul{
   margin: 5px;
   float: left;
 }
-.t-Card-wrap{
+.t-Card-wrap {
   background-color: #fff;
   border: 1px solid rgba(0,0,0,.075);
   width: 100%;
   border-radius: 15px;
   padding: 0;
-  min-height: 400px;
+  min-height: 510px;
 }
 .margin-none{
   margin: 0;
