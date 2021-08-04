@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.7.1",
+    "bootstrap": "^5.1.0",
     "next": "10.0.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^7.12.2",
     "react-yup": "^1.23.0",
+    "reactstrap": "^8.9.0",
     "swr": "0.3.6",
     "yup": "^0.32.9"
   },

@@ -1,5 +1,7 @@
 import { useGetprojects, useGetTranslations } from "../../../useRequest";
 import Projects from "../../../components/Projects";
+import 'bootstrap/dist/css/bootstrap.css';
+import ModalComp from "../../../components/ModalComp";
 import EnquireForm from "../../../components/EnquireForm";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -22,7 +24,7 @@ export default function IndexPage({trans}) {
       </a>
       <h1 className="margin-top-lg">{trans.handover}</h1>
       <p className="margin-top-lg">{trans.post_handvoer}</p>
-      <a href="#" className="t-Button t-Button--icon t-Button--large  t-Button--iconLeft margin-top-lg"><span aria-hidden="true" className="t-Icon t-Icon--left fa fa-envelope"></span>{trans.enquire_title}</a>
+      <ModalComp />
       </div>
       <div className="col col-7 padding-top-md">
       <Image src="/banner.png" width="1380px" height="1228px" alt="fäm Properties Banner"/>
@@ -33,7 +35,7 @@ export default function IndexPage({trans}) {
     {/*Wrapper Section Starts*/}
     <div className="wrapper-line margin-top-lg padding-top-lg padding-bottom-md">
       <div className="container">
-        <div className="row wrapper-bg">
+        <div className="wrapper-bg">
           <div className="wrapper-cont">
           <div className="fa">
           <Image src="/1.png" width="40px" height="40px" alt="fäm Properties"/>
@@ -86,7 +88,7 @@ export default function IndexPage({trans}) {
       <div className="container text-center">
       <h2>{trans.wrapper_left_title}</h2>
       <p>{trans.footer_text}</p>
-      <a href="#" className="t-Button t-Button--icon t-Button--large  t-Button--iconLeft margin-top-md"><span aria-hidden="true" className="t-Icon t-Icon--left fa fa-envelope"></span>{trans.enquire_title}</a>
+       <ModalComp />
       </div>
     </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import ModalComp from './ModalComp';
 export default function Projects({proj}) {
   const { project_name,area,price,downpayment,images } = proj;
   const [transLabels, settransLabels] = useState([]);
@@ -28,13 +29,13 @@ export default function Projects({proj}) {
             <p className="margin-none">At {area}</p>
             <ul className="card-info">
               
-              <li>{ transLabels.currency_symbol} {abbreviateNumber(price)}<span>{ transLabels.starting_price}</span></li>
+              <li>{ transLabels.currency_symbol} {abbreviateNumber(price)}<span>{transLabels.starting_price}</span></li>
               <li>{downpayment}<span>{ transLabels.downpayment}</span></li>
             </ul>
             <ul className="card-buttons">
               <li><a href="#">{ transLabels.view_photos}</a></li>
               <li><a href="#">{ transLabels.video_title}</a></li>
-              <li><a href="#">{ transLabels.learn_more}</a></li>
+              <li><ModalComp/></li>
             </ul>
             </div>
           </div>
