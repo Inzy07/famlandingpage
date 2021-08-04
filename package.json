@@ -1,0 +1,22 @@
+{
+  "name": "next-swr-example",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "next": "10.0.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^7.12.2",
+    "swr": "0.3.6"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": ""
+}
