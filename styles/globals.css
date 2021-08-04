@@ -20,6 +20,7 @@ a {
   text-shadow: none;
   border-radius: 4px;
   transition: background-color .2s ease,box-shadow .2s ease,color .2s ease;
+  cursor: pointer;
 }
 .t-Button--large {
   padding: 1.2rem 1.6rem;
@@ -76,6 +77,9 @@ a {
 .padding-top-lg {
   padding-top: 32px!important;
 }
+.padding-bottom-lg {
+  padding-bottom: 32px!important;
+}
 .padding-bottom-md {
   padding-bottom: 16px!important;
 }
@@ -107,9 +111,19 @@ ul{
   margin: 0;
   padding: 0;
 }
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.grey-bg{
+  background: #F6F4F2;
+  min-height: 600px;
+  position: relative;
+}
 .t-Card-items {
-  width: 32%;
-  margin: 5px;
+  width: 31%;
+  margin: 10px;
   float: left;
 }
 .t-Card-wrap {
@@ -130,7 +144,7 @@ ul{
 }
 .card-info,
 .card-buttons{
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -247,35 +261,42 @@ ul{
   background-color: #18181a;
   color: #fff;
 }
-form>div{
-  max-width: 500px;
-  margin: 0 auto;
+.agent-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-form div .t-Button{
-  margin-left: 20px;
+form{max-width: 550px;}
+.form-row{
+  width: 100%;
+  float: left;
+  position: relative;
+}
+.invalid-feedback{
+  position: absolute;
+  right: 5px;
+  top: 0;
+  color: rgb(210 18 18);
 }
 label{
   width: 100%;
   float: left;
-  padding-left: 25px;
   margin-bottom: -5px;
 }
 input{
-  padding: 10px;
-    width: 500px;
+    padding: 10px;
+    width: 100%;
     margin: 15px auto;
-    margin-left: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid #d8d8d8;
     background: #fff;
     height: 48px;
 }
 textarea{
-  padding: 10px;
-    width: 500px;
+    padding: 10px;
+    width: 100%;
     margin: 15px auto;
-    margin-left: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid #d8d8d8;
     background: #fff;
     height:80px;

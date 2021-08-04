@@ -1,5 +1,6 @@
 import { useGetprojects, useGetTranslations } from "../../../useRequest";
 import Projects from "../../../components/Projects";
+import EnquireForm from "../../../components/EnquireForm";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
@@ -10,10 +11,6 @@ export default function IndexPage({trans}) {
   const {projects,error,} = useGetprojects("/"+pid.cat);
   if (error) return <h1>Something went wrong!</h1>;
   if (!projects) return <h1>Loading...</h1>;
-  const registerUser = event => {
-    event.preventDefault() // don't redirect the page
-    // where we'll add our form logic
-  }
   return (
     <div>
     {/*Banner Section Starts*/}
@@ -103,6 +100,7 @@ export default function IndexPage({trans}) {
     </div>
     {/*Footer Banners Ends*/}
     {/*Video Starts*/}
+    <div className="w-100 u-left grey-bg">
     <div className="container video-bg">
       <div className="text-center w-100 u-left">  
       <h2>{trans.wrapper_right_title}</h2>
@@ -111,34 +109,21 @@ export default function IndexPage({trans}) {
     </div>
     {/*Video Ends*/}
     {/* Form Starts */}
-    <div className="container padding-top-lg  padding-bottom-lg">
-    <div className="w-100 u-left">
-    <form onSubmit={registerUser}>
-      <div>
-      <label htmlFor="name">Name</label>
-      <input id="name" type="text" autoComplete="name" required />
-      </div>
-      <div>
-      <label htmlFor="email">Email</label>
-      <input id="email" type="text" autoComplete="email" required />
-      </div>
-      <div>
-      <label htmlFor="mobile">Mobile</label>
-      <input id="mobile" type="text" autoComplete="mobile" required />
-      </div>
-      <div>
-      <label htmlFor="message">Message</label>
-      <textarea id="message" type="text" autoComplete="message"></textarea>
-      </div>
-      <div>
-      <button type="submit" className="t-Button t-Button--icon t-Button--large  t-Button--iconLeft margin-top-md"><span aria-hidden="true" className="t-Icon t-Icon--left fa fa-envelope"></span>{trans.enquire_title}</button>
-      </div>
-    </form>
+    <div className="container padding-top-lg">
+     <h2 className="padding-bottom-lg margin-auto">{trans.form_title}</h2>
+     <div className="d-flex">
+     <div className="agent-img">
+     <Image src="/agent3.png" width="1100px" height="900px" alt="fäm Properties"/>
+    </div> 
+    <div className="w-100 u-left padding-bottom-lg">
+      <EnquireForm  />  
+    </div>
+    </div>
     </div>
     </div>
     {/* Form Ends */}
     {/*Footer Starts*/}
-    <div className="footer-bg margin-top-lg w-100 u-left">
+    <div className="footer-bg w-100 u-left">
     <iframe width="100%" height="500" frameBorder="0" src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d14441.51425854612!2d55.264190490750444!3d25.190452937957833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!1i0!3e6!4m0!4m5!1s0x3e5f69d439783743%3A0x64b7bc4ca8ecb767!2sFAM+Properties+-+Dubai+Real+Estate+Brokers+-+Sheikh+Zayed+Road+-+Business+Bay+-+Downtown+Dubai%2C+Executive+Towers+-+Tower+D+-+Aspect+Tower+%232404+-+Dubai+-+United+Arab+Emirates!3m2!1d25.191952!2d55.266079!5e0!3m2!1sen!2sae!4v1398320050802"></iframe>
       <div className="w-100 u-left t-Footer">
       <div className="container">  

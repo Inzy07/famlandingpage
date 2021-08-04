@@ -9,12 +9,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.7.1",
     "next": "10.0.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^7.12.2",
-    "swr": "0.3.6"
+    "react-yup": "^1.23.0",
+    "swr": "0.3.6",
+    "yup": "^0.32.9"
   },
   "license": "MIT",
   "keywords": [],
