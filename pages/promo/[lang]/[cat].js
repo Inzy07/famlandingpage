@@ -1,13 +1,14 @@
+import React, { useState, useEffect } from 'react';
 import { useGetprojects, useGetTranslations } from "../../../useRequest";
 import Projects from "../../../components/Projects";
 import 'bootstrap/dist/css/bootstrap.css';
-import ModalComp from "../../../components/ModalComp";
 import EnquireForm from "../../../components/EnquireForm";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-
+import { Button, Modal, ModalBody} from "reactstrap";
 
 export default function IndexPage({trans}) {
+  const [modalDefaultOpen, setModalDefaultOpen] = React.useState(false);
   const router = useRouter();
   const pid = router.query;
   const {projects,error,} = useGetprojects("/"+pid.cat);
@@ -24,7 +25,9 @@ export default function IndexPage({trans}) {
       </a>
       <h1 className="margin-top-lg">{trans.handover}</h1>
       <p className="margin-top-lg">{trans.post_handvoer}</p>
-      <ModalComp />
+      <Button className="t-Button" type="button" onClick={() => setModalDefaultOpen(!modalDefaultOpen)}>
+        {trans.enquire_title}
+      </Button>
       </div>
       <div className="col col-7 padding-top-md">
       <Image src="/banner.png" width="1380px" height="1228px" alt="fäm Properties Banner"/>
@@ -88,7 +91,9 @@ export default function IndexPage({trans}) {
       <div className="container text-center">
       <h2>{trans.wrapper_left_title}</h2>
       <p>{trans.footer_text}</p>
-       <ModalComp />
+      <Button className="t-Button" type="button" onClick={() => setModalDefaultOpen(!modalDefaultOpen)}>
+        {trans.enquire_title}
+      </Button>
       </div>
     </div>
     </div>
@@ -136,6 +141,24 @@ export default function IndexPage({trans}) {
     </div>
     </div>
     {/*Footer Ends*/}
+    {/*Form Modal Starts*/}
+    <Modal toggle={() => setModalDefaultOpen(!modalDefaultOpen)} isOpen={modalDefaultOpen}>
+        <div className=" modal-header">
+          <h5 className=" modal-title" id="exampleModalLabel">
+          {trans.enquire_title}
+          </h5>
+          <button
+            aria-label="Close"
+            className=" close"
+            type="button"
+            onClick={() => setModalDefaultOpen(!modalDefaultOpen)}
+          >
+            <span aria-hidden={true}>×</span>
+          </button>
+        </div>
+        <ModalBody><EnquireForm/></ModalBody>
+    </Modal>
+    {/*Form Modal Ends*/}
   </div>
   );
 }

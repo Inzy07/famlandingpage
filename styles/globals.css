@@ -193,6 +193,10 @@ ul{
   margin: 0 4px;
   overflow: hidden;
 }
+
+.card-buttons li a.t-Button{
+  color: #fff !important;
+}
 .cards-image img{
   display: none;
 }
@@ -200,6 +204,12 @@ ul{
   display: block;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  object-fit: cover;
+}
+.styles-module_image__2hdkJ{
+  border-radius: 15px;
+  width: 1000px;
+  height: 750px;
   object-fit: cover;
 }
 .card-body{
@@ -295,6 +305,8 @@ form{max-width: 550px;}
 }
 .invalid-feedback{
   position: absolute;
+  width: auto !important;
+  margin-top: 0 !important;
   right: 5px;
   top: 0;
   color: rgb(210 18 18);
@@ -322,6 +334,10 @@ textarea{
     background: #fff;
     height:80px;
 }
+.ft-copy-txt p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 @media (min-width: 768px){
 .hidden-sm-up {
     display: none!important;
@@ -330,5 +346,22 @@ textarea{
 @media (max-width: 767px){
 .hidden-xs-down {
     display: none!important;
+}
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm{
+    width: 100%;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row .col{
+  width: 100%;
+}
+.wrapper-bg{
+  flex-direction: column;
+}
+.t-Card-items{
+  width: 100%;
+  margin: 0;
 }
 }
